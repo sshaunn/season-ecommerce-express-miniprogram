@@ -1,0 +1,17 @@
+<view class="container">
+	<view class="order-total-title">订单总价</view>
+	<view class="order-total">${{total}}</view>
+	<view class="title">银行转账信息</view>
+	<view class="text">Commonwealth Bank</view>
+	<view class="text">Account Name: Little Prince</view>
+	<view class="text">BSB: 063 109</view>
+	<view class="text">Account Number: 1154 7270</view>
+	<view class="description">* 线下支付需要人工审核，订单状态会在审核完成后自动更新，请耐心等待。</view>
+	<view class="photo-item" bindtap="chooseImage">
+    <image wx:if="{{!src}}" src="/images/icon/upload.png" class="no-image"> </image>
+    <image wx:else src="{{src}}" class="no-image"></image>
+	</view>
+  <view class="upload-button" bindtap="confirmImage">
+    <view class="button-text">确定上传</view>
+  </view>
+</view>

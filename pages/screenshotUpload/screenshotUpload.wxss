@@ -1,0 +1,85 @@
+/* pages/screenshotUpload/screenshotUpload.wxss */
+page {
+  min-height: 100%;
+  background-color: #f2f2f2;
+}
+
+.container {
+  background-color: #f2f2f2;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  align-items: stretch;
+  padding-bottom: 200rpx;
+}
+
+.order-total-title {
+  margin-top: 50rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+}
+
+.order-total {
+  text-align: center;
+  margin-top: 30rpx;
+  color: #ff7800;
+  font-size: 36rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  font-weight: bold;
+  padding-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.text {
+  font-size: 28rpx;
+  padding-left: 30rpx;
+}
+
+.description {
+  font-size: 24rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #a2a2a2;
+  margin-top: 30rpx;
+}
+
+.photo-item {
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  height: 300rpx;
+  width: 300rpx;
+  background-color: #d9d9d9;
+  border-color: #a2a2a2;
+} 
+
+.add-image-text {
+  justify-content: center;
+  text-align: center;
+  padding-top: 30rpx;
+}
+
+.no-image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.upload-button {
+  background-color: #ff7800;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.button-text {
+  color: white;
+}

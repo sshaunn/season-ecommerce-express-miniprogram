@@ -1,0 +1,20 @@
+<view class="container">
+    <view class='has-info' wx:if="{{pickup_points.length > 0}}">
+        <view bindtap="selectAddress" class='info-item' data-addressid="{{item.id}}" wx:for="{{pickup_points}}" wx:key="id">
+            <view class="selected">
+                <image wx:if="{{item.id == nowAddress}}" class="img" src="/images/icon/tick-selected.png"></image>
+                <image wx:else class="img" src="/images/icon/gou-gray.png"></image>
+            </view>
+            <view class="info-wrap">
+                <view class="addr">
+                    <view class="top">{{item.address}}</view>
+                    <view class="text">{{item.suburb}} {{item.postcode}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="no-info" wx:else>
+        <image src="/images/icon/position-deny.png" class="img"></image>
+        <view class="text">没有地址信息</view>
+    </view>
+</view>

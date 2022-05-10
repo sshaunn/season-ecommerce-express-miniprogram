@@ -1,0 +1,109 @@
+<view class="container">
+    <view class="userinfo">
+        <view class='head-wrap' wx:if="{{hasUserInfo == 0}}" bindtap='goAuth'>
+            <view class="no-login-avatar">
+                <view class='no-avatar'>
+                    <image class='avatar' src="/images/icon/default_avatar_big.png"></image>
+                </view>
+                <view class='btn-login'>点我登录</view>
+            </view>
+        </view>
+        <view class='head-wrap' wx:else bindtap='goProfile'>
+            <view class="head-l">
+                <view class='l'>
+                    <image class='avatar' src="{{userInfo.avatar}}"></image>
+                </view>
+                <view class='r'>
+                    <view class='t'>
+                        <view class='name'>{{userInfo.nickname}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="head-r">
+                <view class="arrow"></view>
+            </view>
+        </view>
+    </view>
+    <view class="order-container">
+        <view class='header' data-index='0' bindtap='toOrderListTap'>
+            <view class='top-title'>
+                <view class='left-line'></view>
+                <view class='text'>我的订单</view>
+            </view>
+            <view class='see-more'>
+                <view class="text">查看全部订单</view>
+                <view class="arrow"></view>
+            </view>
+        </view>
+        <view class='btn-container'>
+            <view class='icon-wrap' data-index='1' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/orders/for-payment.png'>
+                    </image>
+                    <view wx:if="{{status['101'] > 0 }}" class='red-point'>{{status['101']}}</view>
+                </view>
+                <text class='order-txt'>待付款</text>
+            </view>
+            <view class='icon-wrap' data-index='2' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/orders/for-confirm.png'>
+                    </image>
+                    <view wx:if="{{status['201'] > 0 }}" class='red-point'>{{status['201']}}</view>
+                </view>
+                <text class='order-txt'>待确认</text>
+            </view>
+            <view class='icon-wrap' data-index='3' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/orders/for-receive.png'>
+                    </image>
+                    <view wx:if="{{status['301'] > 0 }}" class='red-point'>{{status['301']}}</view>
+                </view>
+                <text class='order-txt'>待收货</text>
+            </view>
+            <view class='icon-wrap' data-index='4' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/orders/received.png'>
+                    </image>
+                    <view wx:if="{{status['401'] > 0 }}" class='red-point'>{{status['401']}}</view>
+                </view>
+                <text class='order-txt'>已收货</text>
+            </view>
+        </view>
+    </view>
+    <view class="li-wrap">
+        <view class="list" bindtap="toAddressList">
+            <view class="list-l">
+                <view class="icon">
+                    <image class="img" src="/images/ucenter/addresses.png"></image>
+                </view>
+                <view class="text">地址管理</view>
+            </view>
+            <view class="arrow"></view>
+        </view>
+    </view>
+    <view class="li-wrap">
+        <button class="contact-btn" session-from='{"nickName":"{{userInfo.nickname}}","avatarUrl":"{{userInfo.avatar}}"}' open-type="contact">
+            <view class="list-l">
+                <view class="icon">
+                    <image class="img" src="/images/ucenter/service.png"></image>
+                </view>
+                <view class="text">联系客服</view>
+            </view>
+            <view class="arrow"></view>
+        </button>
+        <view class="list" bindtap="toAbout">
+            <view class="list-l">
+                <view class="icon">
+                    <image class="img" src="/images/ucenter/about.png"></image>
+                </view>
+                <view class="text">关于</view>
+            </view>
+            <view class="arrow"></view>
+        </view>
+    </view>
+    <view class="company">
+        <view class="logo">
+            <image src="/images/icon/logo-black.png"></image>
+        </view>
+    </view>
+</view>

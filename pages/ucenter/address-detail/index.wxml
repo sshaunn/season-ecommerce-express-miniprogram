@@ -1,0 +1,53 @@
+<view class="container">
+    <view class="notice-wrap">
+        <text class="text">现仅支持配送至墨尔本及周边地区</text>
+    </view>
+    <view class='edit-container'>
+        <view class="a-item">
+            <view class="icon">
+                <image class="img" src="/images/icon/receiver.png"></image>
+            </view>
+            <view class="input-wrap">
+                <input cursor-spacing='100' class='a-input' bindinput="bindinputName" placeholder='姓名' value="{{address.contact_name}}"></input>
+            </view>
+        </view>
+        <view class="a-item">
+            <view class="icon">
+                <image class="img" src="/images/icon/mobile.png"></image>
+            </view>
+            <view class="input-wrap">
+                <input cursor-spacing='100' class='a-input' type='number' bindblur="mobilechange" value="{{address.contact_number}}" placeholder='电话 (例: 0412345678)'></input>
+            </view>
+        </view>
+        <view class="a-item">
+            <view class="icon">
+                <image class="img" src="/images/icon/address.png"></image>
+            </view>
+            <view class="input-wrap">
+                <input cursor-spacing='100' class="a-input" bindinput="bindinputAddress" value="{{address.street}}" placeholder="收货地址" />
+            </view>
+        </view>
+        <view class="a-item">
+            <view class="icon">
+                <image class="img" src="/images/icon/position.png"></image>
+            </view>
+            <view class="input-wrap">
+                <input cursor-spacing='100' class="a-input" bindinput="bindinputSuburb" value="{{address.suburb}}" placeholder="Suburb" />
+            </view>
+            <view class="input-wrap">
+                <input cursor-spacing='100' class="a-input" bindinput="bindinputPostcode" bindblur="validatePostcodeHandler" value="{{address.postcode}}" placeholder="邮政编码" />
+                <input disabled cursor-spacing='100' class="a-input-disabled" bindinput="bindinputAddress" value="{{address.state}}" placeholder="州/State" />
+            </view>
+        </view>
+    </view>
+    <view class="default-wrap">
+        <view class="text">设为默认地址</view>
+        <switch class="switch" checked="{{address.is_default}}" bindchange="switchChange"></switch>
+    </view>
+    <view class='btn-wrap' bindtap="saveAddress">
+        <view class="btn active">保存</view>
+    </view>
+    <view class='delete-wrap' wx:if="{{addressId > 0}}" bindtap='deleteAddress'>
+        <view class='btn'>删除</view>
+    </view>
+</view>

@@ -1,0 +1,54 @@
+<!--components/specifcationDrawer.wxml-->
+<view class="attr-pop-box" hidden="{{!isOpen}}" bindtap='closeAttr'>
+  <view class="attr-pop" catchtap="preventBubble">
+    <view class="close" catchtap="closeAttr">
+      <image class="icon" src="/images/icon/icon-close.png"></image>
+    </view>
+    <view class="img-info">
+      <view class="img-wrap">
+        <image class="img" src="{{productInfo.info.list_pic_url}}"></image>
+      </view>
+      <view class="info">
+        <view class='price-range' wx:if="{{priceChecked == false}}">
+          <!-- todo 原价不等于0的时候要补充 -->
+          <view class='retail-price'>
+            <view class='p-title'>零售价：</view>
+            <view class='g-price'>${{productInfo.info.retail_price}}</view>
+          </view>
+        </view>
+        <view class='price-range' wx:elif="{{priceChecked == true}}">
+          <view class='retail-price'>
+            <view class='p-title'>零售价：</view>
+            <view class='g-price'>${{checkedSpecPrice}}</view>
+          </view>
+        </view>
+        <view class="a" wx:if="{{productInfo.productList.length>0}}">{{tmpSpecText}}</view>
+      </view>
+    </view>
+    <view class="spec-con">
+      <view class='spec-item'>
+        <view class='name'>{{productInfo.specificationList.name}}</view>
+        <view class="values">
+          <view class="value {{item.checked ? 'selected' : ''}} {{item.goods_number <=0?'out-stock':''}}"
+            bindtap="clickSkuValue" wx:for="{{productInfo.specificationList.valueList}}" wx:key="id" data-value-id="{{item.id}}"
+            data-index="{{index}}" data-name-id="{{item.specification_id}}">{{item.value}}</view>
+        </view>
+      </view>
+      <!-- <view class="number-item">
+        <view class="name">库存</view>
+        <view class='stock-num'>{{goodsNumber}}</view>
+      </view> -->
+      <view class="number-item">
+        <view class="name">数量 ({{productInfo.info.goods_unit}})</view>
+        <view class="selnum">
+          <button class="cut" bindtap="cutNumber">-</button>
+          <input value="{{number}}" class="number" type="number" cursor-spacing="100" bindblur="inputNumber" disabled="{{disabledEntireForm}}" />
+          <button class="add" bindtap="addNumber" disabled="{{disabled || disabledEntireForm}}">+</button>
+        </view>
+      </view>
+      <view class="add-btn-wrap">
+        <button class="add-btn" bindtap="addToCart" disabled="{{disabledEntireForm}}">加入购物车</button>
+      </view>
+    </view>
+  </view>
+</view>

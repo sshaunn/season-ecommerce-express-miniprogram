@@ -1,0 +1,10 @@
+<view class="container">
+    <view class='about-wrap'>
+        <view class='title'>小王子美食精选</view>
+        <view class='content'>
+            微信号：xxxx
+        </view>
+        <view class="line"></view>
+        <view class="content">Developed by AIBUILD Pty Ltd</view>
+    </view>
+</view>

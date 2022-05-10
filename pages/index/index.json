@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "海胆小王子美食精选",
+  "usingComponents": {
+    "specification-drawer": "../../components/specificationDrawer/specificationDrawer"
+  }
+}
